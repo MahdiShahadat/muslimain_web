@@ -1,0 +1,31 @@
+{
+  "name": "angular-starter",
+  "private": true,
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "dev": "ng serve",
+    "deploy": "ng build && firebase deploy"
+  },
+  "dependencies": {
+    "@angular/animations": "^19.1.1",
+    "@angular/common": "^19.1.1",
+    "@angular/compiler": "^19.1.1",
+    "@angular/core": "^19.1.1",
+    "@angular/forms": "^19.1.1",
+    "@angular/platform-browser": "^19.1.1",
+    "@angular/platform-browser-dynamic": "^19.1.1",
+    "@angular/router": "^19.1.1",
+    "rxjs": "^7.8.1",
+    "tslib": "^2.6.2",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^19.1.1",
+    "@angular/cli": "^19.1.1",
+    "@angular/compiler-cli": "^19.1.1",
+    "firebase-tools": "^13.0.2",
+    "typescript": "~5.5.0"
+  }
+}

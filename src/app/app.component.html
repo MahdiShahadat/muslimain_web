@@ -1,0 +1,36 @@
+<nav class="navbar">
+  <div class="nav-content">
+    <a routerLink="/" class="logo-link">
+      <span class="logo-text">Muslimain</span>
+    </a>
+    <div class="nav-links">
+      <button class="theme-toggle" (click)="themeService.toggleTheme()">
+        <span class="material-icons">
+          {{ (themeService.isDarkTheme$ | async) ? 'light_mode' : 'dark_mode' }}
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Legal</h3>
+      <a routerLink="/privacy">Privacy Policy</a>
+      <a routerLink="/terms">Terms of Use</a>
+    </div>
+    <div class="footer-section">
+      <h3>Support</h3>
+      <a routerLink="/contact">Contact Us</a>
+    </div>
+    <div class="footer-section">
+      <h3>Company</h3>
+      <p>© 2025 Muslimain. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
