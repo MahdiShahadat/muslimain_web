@@ -104,10 +104,10 @@ import { FeatureCardComponent } from '../../components/feature-card/feature-card
           </p>
           <div class="app-buttons">
             <a href="https://apps.apple.com/app/muslimain" class="app-store-button" target="_blank" rel="noopener noreferrer">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on App Store">
+              <img src="assets/download_app_store_logo.png" alt="Download on App Store">
             </a>
             <a href="https://play.google.com/store/apps/details?id=com.muslimain" class="play-store-button" target="_blank" rel="noopener noreferrer">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+              <img src="assets/download_play_store_logo.png" alt="Get it on Google Play">
             </a>
           </div>
         </div>

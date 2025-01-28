@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "dev": "ng serve",
-    "deploy": "ng build && firebase deploy"
+    "deploy": "ng build --base-href=/muslimain_web/ && npx angular-cli-ghpages --dir=dist/muslimain-web"
   },
   "dependencies": {
     "@angular/animations": "^19.1.1",
