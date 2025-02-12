@@ -1,9 +1,9 @@
 const routes = {
-    '/': 'pages/home.html',
-    '/privacy-policy': 'pages/privacy.html',
-    '/terms-of-use': 'pages/terms.html',
-    '/contact': 'pages/contact.html',
-    '/account-deletion': 'pages/account-deletion.html'
+    '/muslimain_web/': 'pages/home.html',
+    '/muslimain_web/privacy-policy': 'pages/privacy.html',
+    '/muslimain_web/terms-of-use': 'pages/terms.html',
+    '/muslimain_web/contact': 'pages/contact.html',
+    '/muslimain_web/account-deletion': 'pages/account-deletion.html'
 };
 
 async function handleLocation() {
