@@ -2,8 +2,7 @@ const routes = {
     '/muslimain_web/': 'pages/home.html',
     '/muslimain_web/privacy-policy': 'pages/privacy.html',
     '/muslimain_web/terms-of-use': 'pages/terms.html',
-    '/muslimain_web/contact': 'pages/contact.html',
-    '/muslimain_web/account-deletion': 'pages/account-deletion.html'
+    '/muslimain_web/contact': 'pages/contact.html'
 };
 
 async function handleLocation() {
@@ -13,14 +12,10 @@ async function handleLocation() {
         return;
     }
 
-    // Get the path and handle GitHub Pages base path
     let path = window.location.pathname;
-    const githubPagesBase = '/muslimain_web';
-    if (path.startsWith(githubPagesBase)) {
-        path = path.slice(githubPagesBase.length);
-    }
-    
-    const route = routes[path] || routes['/'];
+    // Handle trailing slash
+    path = path.endsWith('/') && path !== '/muslimain_web/' ? path.slice(0, -1) : path;
+    const route = routes[path] || routes['/muslimain_web/'];
     
     try {
         const response = await fetch(route);
@@ -37,7 +32,7 @@ async function handleLocation() {
                 <div class="container">
                     <h1>Page Not Found</h1>
                     <p>The page you're looking for doesn't exist.</p>
-                    <a href="/" data-link>Return to Home</a>
+                    <a href="/muslimain_web/" data-link>Return to Home</a>
                 </div>
             </section>
         `;
