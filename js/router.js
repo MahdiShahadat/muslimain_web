@@ -8,10 +8,7 @@ const routes = {
 
 async function handleLocation() {
     const appElement = document.getElementById('app');
-    if (!appElement) {
-        console.error('App element not found');
-        return;
-    }
+    if (!appElement) return;
 
     // Show loading state immediately
     appElement.innerHTML = `
@@ -23,20 +20,17 @@ async function handleLocation() {
     `;
 
     let path = window.location.pathname;
-    path = path.endsWith('/') ? path.slice(0, -1) : path;
-    path = path || '/';
+    // Remove any trailing slash except for root
+    path = path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path;
 
     const route = routes[path] || routes['/'];
-    let content;
     
     try {
         const response = await fetch(route);
-        if (!response.ok) {
-            throw new Error('Page not found');
-        }
-        content = await response.text();
+        if (!response.ok) throw new Error('Page not found');
+        const content = await response.text();
         
-        // Update page title first
+        // Update title and content
         const titles = {
             '/': 'Home',
             '/privacy-policy': 'Privacy Policy',
@@ -45,8 +39,6 @@ async function handleLocation() {
             '/account-deletion': 'Account Deletion'
         };
         document.title = `Muslimain - ${titles[path] || 'Home'}`;
-        
-        // Then update content
         appElement.innerHTML = content;
         window.scrollTo(0, 0);
     } catch (error) {
